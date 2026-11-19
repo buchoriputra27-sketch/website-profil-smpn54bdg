@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as EkstrakurikulerRouteImport } from './routes/ekstrakurikuler'
+import { Route as FasilitasRouteImport } from './routes/fasilitas'
+import { Route as KontakRouteImport } from './routes/kontak'
+import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EkstrakurikulerRoute = EkstrakurikulerRouteImport.update({
+  id: '/ekstrakurikuler',
+  path: '/ekstrakurikuler',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FasilitasRoute = FasilitasRouteImport.update({
+  id: '/fasilitas',
+  path: '/fasilitas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontakRoute = KontakRouteImport.update({
+  id: '/kontak',
+  path: '/kontak',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TentangKamiRoute = TentangKamiRouteImport.update({
+  id: '/tentang-kami',
+  path: '/tentang-kami',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/ekstrakurikuler': typeof EkstrakurikulerRoute
+  '/fasilitas': typeof FasilitasRoute
+  '/kontak': typeof KontakRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/ekstrakurikuler': typeof EkstrakurikulerRoute
+  '/fasilitas': typeof FasilitasRoute
+  '/kontak': typeof KontakRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/ekstrakurikuler': typeof EkstrakurikulerRoute
+  '/fasilitas': typeof FasilitasRoute
+  '/kontak': typeof KontakRoute
+  '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/ekstrakurikuler'
+    | '/fasilitas'
+    | '/kontak'
+    | '/tentang-kami'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/ekstrakurikuler'
+    | '/fasilitas'
+    | '/kontak'
+    | '/tentang-kami'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/ekstrakurikuler'
+    | '/fasilitas'
+    | '/kontak'
+    | '/tentang-kami'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  EkstrakurikulerRoute: typeof EkstrakurikulerRoute
+  FasilitasRoute: typeof FasilitasRoute
+  KontakRoute: typeof KontakRoute
+  TentangKamiRoute: typeof TentangKamiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ekstrakurikuler': {
+      id: '/ekstrakurikuler'
+      path: '/ekstrakurikuler'
+      fullPath: '/ekstrakurikuler'
+      preLoaderRoute: typeof EkstrakurikulerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fasilitas': {
+      id: '/fasilitas'
+      path: '/fasilitas'
+      fullPath: '/fasilitas'
+      preLoaderRoute: typeof FasilitasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontak': {
+      id: '/kontak'
+      path: '/kontak'
+      fullPath: '/kontak'
+      preLoaderRoute: typeof KontakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tentang-kami': {
+      id: '/tentang-kami'
+      path: '/tentang-kami'
+      fullPath: '/tentang-kami'
+      preLoaderRoute: typeof TentangKamiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  EkstrakurikulerRoute: EkstrakurikulerRoute,
+  FasilitasRoute: FasilitasRoute,
+  KontakRoute: KontakRoute,
+  TentangKamiRoute: TentangKamiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -28,3 +28,12 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- All official school facts live in `src/lib/school-data.ts`; pages, the chatbot prompt, and tests read from it so content never drifts between them.
+- Never publish a phone number or phone icon anywhere on the site or in chatbot answers; `src/test/school-data.test.ts` guards this.
+- Photos are referenced as `/images/<file>` (served from `public/images/`) through `SmartImage`, which shows a branded placeholder when a file is missing.
+- Contact form inserts into `public.messages` directly from the browser (insert-only RLS); messages are read only by the `/admin` server functions using the admin client after the session check.
+- `/admin` is a shared-password gate: password in server secret `ADMIN_PASSWORD`, encrypted cookie session keyed by `SESSION_SECRET` (SameSite=None + Partitioned so it works inside the editor iframe).
+- Chatbot quick replies answer locally from school data; free-text questions go to the AI gateway via `askSchoolBot` with the school data as the only allowed knowledge.
