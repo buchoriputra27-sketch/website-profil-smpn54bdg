@@ -4,7 +4,7 @@
 export const SCHOOL = {
   name: "SMP Negeri 54 Kota Bandung",
   shortName: "SMPN 54 Bandung",
-  slogan: "five, four, best",
+  slogan: "54 BEST",
   logo: "/images/logo.png",
   gate: "/images/gerbang.jpeg",
   address: "Jl. Raya Utsman Bin Affan, Rancanumpang, Gedebage, Kota Bandung",
@@ -16,11 +16,15 @@ export const SCHOOL = {
     "https://www.google.com/maps/search/?api=1&query=SMP+Negeri+54+Bandung+Rancanumpang+Gedebage",
 } as const;
 
+/** The five words behind the "54 BEST" slogan, in official order. */
+export const SLOGAN_WORDS = ["Berdoa", "Belajar", "Berkarya", "Berkarakter", "Berhasil"] as const;
+
 export const STATS = [
-  { value: 777, suffix: "", label: "Siswa Aktif", note: "Peserta didik" },
-  { value: 24, suffix: "", label: "Rombongan Belajar", note: "Kelas VII – IX" },
-  { value: "B", suffix: "", label: "Akreditasi", note: "30 September 2018" },
-  { value: 33, suffix: "", label: "Tenaga Kependidikan", note: "Guru & staf" },
+  { value: 777, label: "Siswa Aktif", note: "Peserta didik" },
+  { value: 24, label: "Rombongan Belajar", note: "Kelas VII – IX" },
+  { value: "B", label: "Akreditasi", note: "30 September 2018" },
+  { value: 33, label: "Guru", note: "Pendidik" },
+  { value: 5, label: "Tenaga Kependidikan", note: "Staf administrasi" },
 ] as const;
 
 export const BISA = [
@@ -59,14 +63,14 @@ export const BISA = [
 ] as const;
 
 export const VISION =
-  "Terwujudnya Budaya Sekolah yang Religius, Santun, Berwawasan Lingkungan dan Iptek serta Berprestasi.";
+  "Terwujudnya peserta didik yang beriman dan bertakwa kepada Tuhan Yang Maha Esa, sehat jasmani dan rohani, serta mampu berkembang menjadi pribadi yang mandiri, kreatif, kritis, komunikatif, kolaboratif, dan berwawasan kebangsaan untuk menghadapi tantangan global.";
 
 export const MISSIONS = [
-  "Terlaksananya penanaman akhlakul karimah melalui kegiatan dan pembiasaan berbahasa santun.",
-  "Menumbuhkan semangat berprestasi kepada seluruh warga sekolah.",
-  "Meningkatkan pembelajaran yang bermutu baik dalam bidang akademik maupun non-akademik.",
-  "Menumbuhkan pribadi yang memiliki karakter Bandung Masagi.",
-  "Mengembangkan sekolah yang berwawasan lingkungan dengan konsep BISA (Bersih, Indah, Sehat, dan Asri).",
+  { title: "Berdoa", text: "Menumbuhkan keimanan dan ketakwaan kepada Tuhan Yang Maha Esa melalui pembiasaan sikap religius, doa bersama, serta penguatan akhlak mulia." },
+  { title: "Belajar", text: "Menyelenggarakan proses pembelajaran yang mendalam, aktif, dan menyenangkan dengan menekankan pada penguasaan pengetahuan, keterampilan, serta pengembangan penalaran kritis." },
+  { title: "Berkarya", text: "Mengembangkan kreativitas dan kemandirian peserta didik melalui berbagai kegiatan intrakurikuler, kokurikuler, dan ekstrakurikuler yang mendorong inovasi serta keterampilan berkarya." },
+  { title: "Berkarakter", text: "Membentuk peserta didik yang berwawasan kebangsaan, menjunjung tinggi nilai kewargaan, serta berkomunikasi dan berkolaborasi dengan baik dalam kehidupan bermasyarakat." },
+  { title: "Berhasil", text: "Mewujudkan lulusan yang sehat jasmani dan rohani, memiliki kecakapan abad 21, serta siap menghadapi tantangan kehidupan untuk meraih keberhasilan di masa depan." },
 ] as const;
 
 export const MASAGI = [
@@ -100,7 +104,7 @@ export const TIMELINE = [
   {
     year: "Kini",
     title: "777 Siswa, 24 Rombel",
-    desc: "Terus berkembang dengan Budaya BISA dan karakter Bandung Masagi menuju sekolah yang five, four, best.",
+    desc: "Terus berkembang dengan Budaya BISA dan karakter Bandung Masagi menuju sekolah 54 BEST: Berdoa, Belajar, Berkarya, Berkarakter, Berhasil.",
   },
 ] as const;
 
@@ -111,7 +115,7 @@ export const LEADERS: Leader[] = [
   { name: "Elin Lindiawati R, S.Pd.", role: "Wakasek Kurikulum", photo: "/images/wkasek-kurikulum.jpeg" },
   { name: "Desi Kusmawati, S.Pd.", role: "Wakasek Kesiswaan", photo: "/images/wakasek-kesiswaan.jpeg" },
   { name: "Farrashati R, S.Pd.", role: "Wakasek Humas", photo: "/images/wakasek-humas.jpeg" },
-  { name: "Aulia Wisuda P, S.Kom.", role: "Wakasek Sarana", photo: "/images/wakasek-sarana.jpg" },
+  { name: "Aulia Wisuda P, S.Kom.", role: "Wakasek Sarana", photo: "/images/wakasek-sarana.jpeg" },
   { name: "Nono, S.A.P", role: "Kepala Tata Usaha", photo: "/images/kepala-tu.jpeg" },
 ];
 
@@ -156,7 +160,7 @@ export const TESTIMONIALS = [
   { name: "Khansa", photo: "/images/khansa.jpeg", quote: "Selama menjadi siswa di sekolah ini, saya mendapatkan banyak pengalaman, ilmu, dan pelajaran berharga, baik dalam bidang akademik maupun nonakademik. Menurut saya, bersekolah di lingkungan yang menerapkan budaya BISA (Bersih, Indah, Sehat, dan Asri) merupakan hal yang sangat positif. Lingkungan sekolah yang bersih dan nyaman dapat membuat proses belajar menjadi lebih menyenangkan, meningkatkan semangat belajar, serta menjaga kesehatan seluruh warga sekolah." },
   { name: "Aulia", photo: "/images/aulia.jpeg", quote: "Saya merasa sangat senang dan nyaman ketika menjadi siswa di SMPN 54 Bandung, saya berpendapat bahwa program ini sangat bagus untuk melatih kedisiplinan siswa dan dapat menimbulkan lingkungan yang bersih, nyaman dan aman. Namun dibalik semua itu saya juga masih berharap agar semua siswa-siswi SMPN 54 Bandung mematuhi aturan yang disediakan dan saya juga berharap agar sekolah dapat mengembangkan lagi program-program tersebut ataupun program-program yang baru ingin dibuat." },
   { name: "Abidzar", photo: "/images/abidzar.jpeg", quote: "Selama menjadi siswa di sini, saya merasa sangat bersukur dan bangga. Sekolah ini bukan hanya tempat belajar, tapi juga tempat saya belajar tentang tanggung jawab, persahabatan, dan kedisiplinan. Bapak/ibu guru selalu membimbing dengan sabar, dan teman-teman sangat mendukung. Saya sangat setuju dengan budaya BISA. Bersih, indah, sehat, dan asri membuat kami merasa nyaman saat belajar. Lingkungan yang bersih membuat pikiran jadi fokus, dan suasana yang asri membuat sekolah terasa seperti rumah kedua. Budaya ini juga melatih kami untuk peduli lingkungan, tidak hanya di sekolah tapi juga di rumah." },
-  { name: "Filzah", photo: "/images/filzdah.jpg", quote: "Perpaduan antara pengalaman berharga selama belajar dan penerapan budaya BISA menjadikan sekolah ini tempat yang sangat ideal, kondusif, serta menyenangkan untuk berkembang." },
+  { name: "Filzah", photo: "/images/filzdah.jpeg", quote: "Perpaduan antara pengalaman berharga selama belajar dan penerapan budaya BISA menjadikan sekolah ini tempat yang sangat ideal, kondusif, serta menyenangkan untuk berkembang." },
   { name: "Ammar", photo: "/images/ammar.jpeg", quote: "Kesan saya selama menjadi siswa di SMPN 54 Bandung cukup senang karena di sini saya menemukan banyak teman yang unik dan juga asik. Pendapat saya mengenai budaya BISA sebenarnya program tersebut sangat bagus agar menciptakan lingkungan yang bersih dan meningkatkan kesadaran siswa, sayangnya mayoritas siswa masih belum menerapkan program dan kurangnya sikap peduli pada lingkungan." },
 ] as const;
 
@@ -168,7 +172,7 @@ export function quickReplyAnswer(topic: QuickReply): string {
     case "Alamat":
       return `📍 ${SCHOOL.name} beralamat di ${SCHOOL.address}. Untuk pertanyaan, silakan kirim email ke ${SCHOOL.email} atau DM Instagram ${SCHOOL.instagram.handle}.`;
     case "Budaya BISA":
-      return `🌿 Budaya BISA adalah gerakan sekolah berwawasan lingkungan: ${BISA.map((b) => `${b.title} (${b.short.toLowerCase().replace(/\.$/, "")})`).join(", ")}. Konsep ini juga tertuang dalam misi ke-5 sekolah.`;
+      return `🌿 Budaya BISA adalah gerakan sekolah berwawasan lingkungan: ${BISA.map((b) => `${b.title} (${b.short.toLowerCase().replace(/\.$/, "")})`).join(", ")}. Budaya ini dijalankan setiap hari oleh seluruh warga sekolah.`;
     case "Jadwal Ekskul":
       return `🗓️ Jadwal ekstrakurikuler:\n${EKSKUL.map((e) => `• ${e.name} — ${e.day}, ${e.time} di ${e.place}`).join("\n")}`;
     case "Jam Operasional":
@@ -179,11 +183,11 @@ export function quickReplyAnswer(topic: QuickReply): string {
 /** Plain-text knowledge base handed to the AI assistant. */
 export function schoolKnowledge(): string {
   return [
-    `Nama: ${SCHOOL.name}. Slogan: "${SCHOOL.slogan}".`,
+    `Nama: ${SCHOOL.name}. Slogan: "${SCHOOL.slogan}" (${SLOGAN_WORDS.join(", ")}).`,
     `Alamat: ${SCHOOL.address}. Email: ${SCHOOL.email}. Instagram: ${SCHOOL.instagram.handle}. YouTube: ${SCHOOL.youtube.handle}. Jam operasional: ${SCHOOL.hours}.`,
-    `Statistik: 777 siswa, 24 rombongan belajar, Akreditasi B (30 September 2018), 33 tenaga kependidikan.`,
+    `Statistik: ${STATS.map((s) => `${s.label} ${s.value} (${s.note})`).join("; ")}.`,
     `Visi: ${VISION}`,
-    `Misi: ${MISSIONS.map((m, i) => `${i + 1}. ${m}`).join(" ")}`,
+    `Misi: ${MISSIONS.map((m, i) => `${i + 1}. ${m.title} — ${m.text}`).join(" ")}`,
     `Budaya BISA: ${BISA.map((b) => `${b.title}: ${b.detail}`).join(" ")}`,
     `Bandung Masagi (pendidikan karakter Kota Bandung berbasis kearifan Sunda): ${MASAGI.map((m) => `${m.title} (${m.value}) — ${m.desc}`).join(" ")}`,
     `Sejarah: ${TIMELINE.map((t) => `${t.year}: ${t.title} — ${t.desc}`).join(" ")}`,

@@ -84,11 +84,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SMP Negeri 54 Kota Bandung — five, four, best" },
+      { title: "SMP Negeri 54 Kota Bandung — 54 BEST" },
       { name: "description", content: "Website resmi SMP Negeri 54 Kota Bandung, sekolah berbudaya BISA dan berkarakter Bandung Masagi." },
       { name: "author", content: "SMP Negeri 54 Kota Bandung" },
       { property: "og:title", content: "SMP Negeri 54 Kota Bandung" },
-      { property: "og:description", content: "Website resmi SMP Negeri 54 Kota Bandung — five, four, best." },
+      { property: "og:description", content: "Website resmi SMP Negeri 54 Kota Bandung — 54 BEST: Berdoa, Belajar, Berkarya, Berkarakter, Berhasil." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

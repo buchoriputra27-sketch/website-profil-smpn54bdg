@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Clock, Instagram, Mail, MapPin, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 import { NAV } from "./nav";
-import { SCHOOL } from "@/lib/school-data";
+import { SCHOOL, SLOGAN_WORDS } from "@/lib/school-data";
 
 export function SiteFooter() {
   return (
@@ -52,9 +52,9 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="relative border-t border-primary-foreground/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-primary-foreground/60 sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 pb-24 pt-6 text-xs text-primary-foreground/60 lg:flex-row lg:pb-6 lg:pr-24">
           <span>© {new Date().getFullYear()} {SCHOOL.name}. Hak cipta dilindungi.</span>
-          <span className="font-display italic text-gold">five, four, best</span>
+          <span className="text-center font-semibold uppercase tracking-[0.2em] lg:text-right"><span className="font-display text-sm text-gold">{SCHOOL.slogan}</span> · {SLOGAN_WORDS.join(" · ")}</span>
         </div>
       </div>
     </footer>

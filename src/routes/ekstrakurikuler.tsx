@@ -95,6 +95,7 @@ function Ekskul() {
                     src={t.photo}
                     alt={t.name}
                     className="h-14 w-14 shrink-0 rounded-full ring-2 ring-gold"
+                    imgClassName="object-top"
                     fallback={<span className="flex h-full w-full items-center justify-center bg-ocean font-display text-lg text-gold">{t.name[0]}</span>}
                   />
                   <div>

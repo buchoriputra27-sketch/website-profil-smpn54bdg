@@ -55,10 +55,13 @@ function About() {
           </Reveal>
           <ol className="grid gap-4 md:grid-cols-2">
             {MISSIONS.map((m, i) => (
-              <Reveal as="li" key={m} delay={i * 90} className={i === 4 ? "md:col-span-2" : ""}>
+              <Reveal as="li" key={m.title} delay={i * 90} className={i === 4 ? "md:col-span-2" : ""}>
                 <div className="glass group flex h-full gap-5 rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-luxe">
                   <span className="font-display text-4xl font-semibold text-gold transition group-hover:text-primary">0{i + 1}</span>
-                  <p className="pt-1.5 leading-relaxed text-foreground/85">{m}</p>
+                  <div className="pt-1">
+                    <h3 className="font-display text-xl font-semibold text-ocean-deep">{m.title}</h3>
+                    <p className="mt-1.5 leading-relaxed text-foreground/85">{m.text}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -161,7 +164,7 @@ function About() {
             <Reveal key={l.name} delay={i * 90}>
               <div className="glass group h-full overflow-hidden rounded-3xl transition hover:-translate-y-2 hover:shadow-luxe">
                 {l.photo && (
-                  <SmartImage src={l.photo} alt={l.name} className="aspect-[4/5] w-full" imgClassName="transition duration-700 group-hover:scale-105" />
+                  <SmartImage src={l.photo} alt={l.name} className="aspect-[3/4] w-full" imgClassName="object-top transition duration-700 group-hover:scale-105" />
                 )}
                 <div className="p-5">
                   <p className="eyebrow text-[0.62rem] text-primary">{l.role}</p>

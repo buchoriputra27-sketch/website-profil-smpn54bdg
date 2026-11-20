@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { EKSKUL, LEADERS, SCHOOL, filterEkskul, quickReplyAnswer, schoolKnowledge } from "@/lib/school-data";
+import { EKSKUL, LEADERS, MISSIONS, SCHOOL, SLOGAN_WORDS, STATS, VISION, filterEkskul, quickReplyAnswer, schoolKnowledge } from "@/lib/school-data";
 
 describe("Ekskul day filter", () => {
   it("shows all 10 activities for Semua", () => {
@@ -41,5 +41,23 @@ describe("Leadership", () => {
 describe("Operating hours", () => {
   it("is Senin–Jumat 07.00–14.00 WIB", () => {
     expect(quickReplyAnswer("Jam Operasional")).toContain("07.00 – 14.00 WIB");
+  });
+});
+
+describe("Official slogan, vision, mission and stats", () => {
+  it("slogan is 54 BEST with its five words in order", () => {
+    expect(SCHOOL.slogan).toBe("54 BEST");
+    expect(SLOGAN_WORDS).toEqual(["Berdoa", "Belajar", "Berkarya", "Berkarakter", "Berhasil"]);
+  });
+  it("has five missions titled after the slogan words", () => {
+    expect(MISSIONS.map((m) => m.title)).toEqual([...SLOGAN_WORDS]);
+  });
+  it("vision is the new official text", () => {
+    expect(VISION.startsWith("Terwujudnya peserta didik yang beriman dan bertakwa")).toBe(true);
+    expect(VISION.endsWith("untuk menghadapi tantangan global.")).toBe(true);
+  });
+  it("shows 33 guru and 5 tenaga kependidikan", () => {
+    expect(STATS.find((s) => s.label === "Guru")?.value).toBe(33);
+    expect(STATS.find((s) => s.label === "Tenaga Kependidikan")?.value).toBe(5);
   });
 });

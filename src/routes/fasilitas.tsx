@@ -5,7 +5,6 @@ import { FACILITIES } from "@/lib/school-data";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { SmartImage } from "@/components/site/SmartImage";
-import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/fasilitas")({
   head: () => ({
@@ -50,16 +49,17 @@ function Facilities() {
       </PageHero>
 
       <section className="relative z-10 mx-auto -mt-12 max-w-7xl px-6">
-        <div className="grid auto-rows-[220px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Uniform 4:3 tiles keep the gallery tidy; the lightbox shows each photo uncropped. */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FACILITIES.map((f, i) => (
-            <Reveal key={f.src} delay={(i % 3) * 110} className={cn(i === 0 && "sm:row-span-2", i === 3 && "lg:row-span-2")}>
+            <Reveal key={f.src} delay={(i % 3) * 110} className="aspect-[4/3]">
               <button
                 type="button"
                 onClick={() => setActive(i)}
                 className="group relative block h-full w-full overflow-hidden rounded-3xl text-left shadow-luxe focus:outline-none focus-visible:ring-4 focus-visible:ring-gold"
                 aria-label={`Lihat foto ${f.title}`}
               >
-                <SmartImage src={f.src} alt={f.title} className="h-full w-full" imgClassName="transition duration-700 group-hover:scale-110" />
+                <SmartImage src={f.src} alt={f.title} className="h-full w-full bg-ocean" imgClassName="transition duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-hero-overlay opacity-60 transition group-hover:opacity-90" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
                   <span className="glass-dark rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-wider">{f.category}</span>

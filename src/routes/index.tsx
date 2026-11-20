@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Compass, Quote } from "lucide-react";
-import { BISA, SCHOOL, STATS, VISION } from "@/lib/school-data";
+import { BISA, SCHOOL, SLOGAN_WORDS, STATS, VISION } from "@/lib/school-data";
 import { SmartImage } from "@/components/site/SmartImage";
 import { Reveal } from "@/components/site/Reveal";
 import { StatCard } from "@/components/site/StatCard";
@@ -9,9 +9,9 @@ import { Icon } from "@/components/site/icons";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SMP Negeri 54 Kota Bandung — five, four, best" },
+      { title: "SMP Negeri 54 Kota Bandung — 54 BEST" },
       { name: "description", content: "Selamat datang di SMP Negeri 54 Kota Bandung: 777 siswa, 24 rombel, berbudaya BISA (Bersih, Indah, Sehat, Asri) di Gedebage." },
-      { property: "og:title", content: "SMP Negeri 54 Kota Bandung — five, four, best" },
+      { property: "og:title", content: "SMP Negeri 54 Kota Bandung — 54 BEST" },
       { property: "og:description", content: "Sekolah berbudaya BISA dan berkarakter Bandung Masagi di Rancanumpang, Gedebage, Bandung." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -41,11 +41,17 @@ function Home() {
             <span className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide">
               <span className="h-2 w-2 rounded-full bg-gold" /> Website Resmi · Gedebage, Kota Bandung
             </span>
-            <h1 className="mt-6 text-6xl font-semibold leading-[0.95] sm:text-8xl">
-              <span className="italic text-gold-gradient animate-shimmer">five, four,</span>
-              <br />
-              best.
+            <h1 className="mt-6 text-7xl font-semibold leading-[0.9] sm:text-9xl">
+              <span className="text-gold-gradient animate-shimmer">54</span> BEST
             </h1>
+            <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-bold uppercase tracking-[0.28em] text-primary-foreground/90 sm:text-sm">
+              {SLOGAN_WORDS.map((w, i) => (
+                <span key={w} className="inline-flex items-center gap-3">
+                  {i > 0 && <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden />}
+                  <span><span className="text-gold">{w[0]}</span>{w.slice(1)}</span>
+                </span>
+              ))}
+            </p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/85">
               Selamat datang di <strong className="font-semibold text-primary-foreground">{SCHOOL.name}</strong> — rumah kedua
               bagi generasi yang religius, santun, peduli lingkungan, dan siap berprestasi.
@@ -70,9 +76,9 @@ function Home() {
 
       {/* Floating stats */}
       <section className="relative z-10 -mt-36 px-6">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
           {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 120}>
+            <Reveal key={s.label} delay={i * 120} className={i === STATS.length - 1 ? "col-span-2 sm:col-span-1" : undefined}>
               <StatCard value={s.value} label={s.label} note={s.note} index={i} />
             </Reveal>
           ))}
@@ -91,8 +97,8 @@ function Home() {
           <Quote className="absolute -top-5 left-8 h-10 w-10 rounded-full bg-gold p-2 text-gold-foreground" />
           <p className="font-display text-xl italic leading-relaxed text-foreground/90">“{VISION}”</p>
           <p className="mt-5 text-sm text-muted-foreground">
-            Visi sekolah yang kami wujudkan bersama seluruh warga sekolah melalui pembiasaan Budaya BISA dan
-            pendidikan karakter Bandung Masagi.
+            Visi sekolah yang kami wujudkan bersama seluruh warga sekolah melalui semangat 54 BEST: Berdoa,
+            Belajar, Berkarya, Berkarakter, Berhasil.
           </p>
           <Link to="/tentang-kami" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary hover:gap-3 transition-all">
             Baca visi & misi lengkap <ArrowRight className="h-4 w-4" />
