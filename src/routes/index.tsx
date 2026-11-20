@@ -78,7 +78,7 @@ function Home() {
       <section className="relative z-10 -mt-36 px-6">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
           {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 120} className={i === STATS.length - 1 ? "col-span-2 sm:col-span-1" : undefined}>
+            <Reveal key={s.label} delay={i * 120} className={i === STATS.length - 1 ? "col-span-2 sm:col-span-1" : ""}>
               <StatCard value={s.value} label={s.label} note={s.note} index={i} />
             </Reveal>
           ))}
